@@ -152,27 +152,16 @@ class ProStopWatch:
 
     def update_time(self):
         if self.is_running:
-
-            self.elapsed_time = (
-                time.time() - self.start_time
-            )
-
+            self.elapsed_time = (time.time() - self.start_time)
             self.display_time()
             self.update_time_id = self.GUI_window.after(100, self.update_time)
 
     def display_time(self):
         # Calculate hours, minutes, and seconds
-        hours = int(
-            self.elapsed_time // 3600
-        )
-        minutes = int(
-            self.elapsed_time % 3600 // 60
-        )
-        seconds = int(
-            self.elapsed_time % 60
-        )
-
-        # Format the time as a string and update the label
+        hours = int(self.elapsed_time // 3600)
+        minutes = int(self.elapsed_time % 3600 // 60)
+        seconds = int(self.elapsed_time % 60)
+         # Format the time as a string and update the label
         time_str = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
         self.time_label.config(text=time_str)
 

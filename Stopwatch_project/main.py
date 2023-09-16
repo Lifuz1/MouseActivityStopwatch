@@ -2,8 +2,8 @@
 This is the main module of the application.
 
 Classes:
-    ProStopWatch: A stopwatch class defined in Stopwatch.py
-    RandomizerGUI: A randomizer GUI class defined in RandomizerGUI.py
+    ProStopWatch: A stopwatch class defined in Stopwatch_project.py
+
 """
 
 import tkinter as tk
@@ -22,7 +22,7 @@ def main():
     """
     # Create the main GUI window
     root = tk.Tk()
-    root.title("Stopwatch")
+    root.title("Stopwatch_project")
     root.geometry("440x200")
     root.minsize(440, 200)
     root.maxsize(440, 200)
