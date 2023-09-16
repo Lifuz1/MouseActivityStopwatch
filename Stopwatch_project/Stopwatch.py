@@ -35,6 +35,7 @@ class ProStopWatch:
         self.update_time_id = None
         self.start_time = None
         self.elapsed_time = 0
+        self.tracking_thread = None
 
         self.time_label = tk.Label(main_window, text="00:00:00", font=("Helvetica", 60))
         self.time_label.pack(pady=5)
@@ -123,9 +124,8 @@ class ProStopWatch:
         self.is_mouse_tracking = not self.is_mouse_tracking
         if self.is_mouse_tracking:
 
-            tracking_thread = threading.Thread(target=self.mouse_tracking)
-            tracking_thread.start()
-
+            self.tracking_thread = threading.Thread(target=self.mouse_tracking)
+            self.tracking_thread.start()
         else:
             pass
 
@@ -161,16 +161,17 @@ class ProStopWatch:
         hours = int(self.elapsed_time // 3600)
         minutes = int(self.elapsed_time % 3600 // 60)
         seconds = int(self.elapsed_time % 60)
-         # Format the time as a string and update the label
+
         time_str = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
         self.time_label.config(text=time_str)
+
 
     def reset_stopwatch(self):
         self.is_running = False
         self.start_time = None
         self.elapsed_time = 0
         self.display_time()
-        self.start_button.config(text="Start")
+        self.start_button.config(text="Start Track")
         self.reset_button.config(state=tk.DISABLED)
 
     def save_time(self):
