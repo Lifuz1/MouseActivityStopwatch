@@ -103,7 +103,6 @@ class ProStopWatch:
 
                 prev_position = position
                 position_time = time.time()
-            # Force update the label in the GUI
             self.GUI_window.update()
             # Add a small delay to reduce CPU usage
             time.sleep(0.01)
@@ -157,7 +156,7 @@ class ProStopWatch:
             self.update_time_id = self.GUI_window.after(100, self.update_time)
 
     def display_time(self):
-        # Calculate hours, minutes, and seconds
+
         hours = int(self.elapsed_time // 3600)
         minutes = int(self.elapsed_time % 3600 // 60)
         seconds = int(self.elapsed_time % 60)
