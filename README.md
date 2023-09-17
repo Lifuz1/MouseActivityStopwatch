@@ -1,9 +1,13 @@
 # MouseActivityStopwatch
-I am a professional poker player, and currently, I specialize in Pot Limit Omaha. I had significant difficulties in assessing my overall work time during the day while playing on various poker rooms/applications, each with its unique settings. Opening tables sometimes involved long waits for willing players (sometimes even hours, depending on the stakes). That's why I created a stopwatch that utilizes mouse activity to track time. Thanks to it, I can see my actual playing time at the end of the day and record the amount of time to monitor my weekly goals.
+I am a professional poker player, currently specialized in Pot Limit Omaha. I had significant difficulties in assessing my overall work time during the day while playing on various poker rooms/applications, each with its unique settings. Opening tables sometimes involved long awaiting for willing players (sometimes even hours, depending on the stakes). That's why I created a stopwatch that utilizes mouse activity to track time. Thanks to it, I can see my actual playing time at the end of the day and record the amount of time to monitor my weekly goals.
 
-This is my first project created in Python, which, despite numerous challenges I encountered, made me fall in love with programming. While developing additional features for the stopwatch, I had to seek knowledge from various sources, such as official documentation, YouTube tutorials explaining library functionality, questions on Stack Overflow, and many hours of collaboration with ChatGPT, which served as my virtual mentor, helping me better understand certain functions and optimize code and its descriptions.
+This is my first project created in Python, which - despite numerous challenges I encountered - made me fall in love with programming. While developing additional features for the stopwatch, I had to seek knowledge from various sources, such as official documentation, YouTube tutorials explaining library functionality, questions on Stack Overflow, and many hours of collaboration with ChatGPT, which served as my virtual mentor, helping me better understand certain functions and optimize code and its descriptions.
 
 ## Widgets
+<p align="center">
+<img src = "Images/Stopwatch_classic_legend.png">
+</p>
+
 1. Change Threshold: Clicking this button will open a window where you can change the time threshold, expressed in seconds. You can also modify the threshold while the timer is running, without affecting the current time measurement. The stopwatch will continue to function, and the new threshold value will be applied from that moment.
 
 2. Start Tracking: Clicking this button will initiate the tracking of mouse movements by the stopwatch, and it will count time until the specified threshold is reached.
@@ -32,4 +36,4 @@ For more information about each library, please refer to the linked documentatio
 
 ## Future Features
 
-Standalone RNG: RNG will be a random number generator that will be useful for individuals who employ GTO (Game Theory Optimal) in their gameplan
+Standalone RNG: RNG will be a random number generator that will be useful for individuals who employ GTO (Game Theory Optimal) in their gameplan.
