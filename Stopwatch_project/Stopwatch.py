@@ -165,7 +165,6 @@ class ProStopWatch:
         time_str = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
         self.time_label.config(text=time_str)
 
-
     def reset_stopwatch(self):
         self.is_running = False
         self.start_time = None
