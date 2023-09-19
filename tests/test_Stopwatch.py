@@ -1,12 +1,13 @@
 from Stopwatch_project.Stopwatch import ProStopWatch
 import pytest
+import time
 import openpyxl
+
 
 
 def test_change_threshold(mocker):
 
     stopwatch = ProStopWatch(None)
-
     mocker.patch('tkinter.simpledialog.askinteger', return_value=None)
 
     stopwatch.change_threshold()
@@ -53,6 +54,20 @@ def test_start_stopwatch(mocker):
     assert stopwatch.elapsed_time == 0
     assert stopwatch.start_button["text"] == "Start Track"
     assert stopwatch.reset_button["state"] == "disabled"
+
+
+def test_update_time(mocker):
+
+    stopwatch = ProStopWatch(None)
+    stopwatch.GUI_window = mocker.MagicMock()
+
+    stopwatch.is_running = True
+    stopwatch.start_time = time.time() - 1800
+    stopwatch.elapsed_time = 1800
+
+    stopwatch.update_time()
+
+    assert stopwatch.elapsed_time == pytest.approx(1800)
 
 
 @pytest.mark.parametrize("elapsed_time, expected_output", [(7265, "02:01:05")])  # elapsed time is passed in seconds
