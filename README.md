@@ -1,3 +1,4 @@
+![License](https://img.shields.io/badge/license-MIT-blue)
 # MouseActivityStopwatch
 I am a professional poker player, currently specialized in Pot Limit Omaha. I had significant difficulties in assessing my overall work time during the day while playing on various poker rooms/applications, each with its unique settings. Opening tables sometimes involved long awaiting for willing players (sometimes even hours, depending on the stakes). That's why I created a stopwatch that utilizes mouse activity to track time. Thanks to it, I can see my actual playing time at the end of the day and record the amount of time to monitor my weekly goals.
 
