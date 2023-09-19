@@ -1,4 +1,6 @@
 from Stopwatch_project.Stopwatch import ProStopWatch
+import pytest
+import openpyxl
 
 
 def test_change_threshold(mocker):
@@ -51,3 +53,21 @@ def test_start_stopwatch(mocker):
     assert stopwatch.elapsed_time == 0
     assert stopwatch.start_button["text"] == "Start Track"
     assert stopwatch.reset_button["state"] == "disabled"
+
+
+@pytest.mark.parametrize("elapsed_time, expected_output", [(7265, "02:01:05")])  # elapsed time is passed in seconds
+def test_save_time(tmpdir, monkeypatch, elapsed_time, expected_output):
+
+    stopwatch = ProStopWatch(None)
+
+    monkeypatch.setattr('tkinter.filedialog.asksaveasfilename', lambda **kwargs: tmpdir.join('test.xlsx'))
+    stopwatch.elapsed_time = elapsed_time
+    stopwatch.save_time()
+
+    file_path = tmpdir.join('test.xlsx')
+    assert file_path.exists()
+
+    workbook = openpyxl.load_workbook(file_path)
+    sheet = workbook.active
+    cell_value = sheet.cell(row=1, column=2).value
+    assert cell_value == expected_output
