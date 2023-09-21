@@ -4,7 +4,6 @@ import time
 import openpyxl
 
 
-
 def test_change_threshold(mocker):
 
     stopwatch = ProStopWatch(None)

@@ -20,7 +20,7 @@ def main():
     In the future, the notebook will have two tabs: 'ProStopwatch' and 'RNG'.
     RNG will be a random number generator that is useful for people who utilize GTO (Game Theory Optimal) in their game.
     """
-    # Create the main GUI window
+
     root = tk.Tk()
     root.title("Stopwatch_project")
     root.geometry("440x200")
